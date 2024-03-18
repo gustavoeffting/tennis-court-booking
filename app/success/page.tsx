@@ -1,4 +1,5 @@
 'use client';
+import { useEffect } from "react";
 import { userInfoAtom } from "@/state/atoms";
 import { useAtomValue } from "jotai";
 import { useRouter } from 'next/navigation';
@@ -9,9 +10,11 @@ const Success = () => {
   const userData = useAtomValue(userInfoAtom)
   const router = useRouter()
 
-  if (!userData.name || !userData.email) {
-    router.push('/booking')
-  }
+  useEffect(() => {
+    if (!userData.name || !userData.email) {
+      router.push('/booking')
+    }
+  }, [])
 
   return (
     <div className='lg:container lg:mx-auto lg:m-5'>

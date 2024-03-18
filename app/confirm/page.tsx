@@ -1,6 +1,7 @@
 'use client';
 import { bookingInfoAtom, userInfoAtom } from '@/state/atoms';
 import { useAtomValue, useSetAtom } from 'jotai';
+import { useEffect } from 'react';
 import { format } from 'date-fns';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
@@ -21,9 +22,12 @@ const Confirm = () => {
     resolver: zodResolver(UserSchema),
   });
 
-  if (!bookingInfo.location || !bookingInfo.duration || !bookingInfo.date || !bookingInfo.time) {
-    router.push('/booking')
-  }
+  useEffect(() => {
+    if (!bookingInfo.location || !bookingInfo.duration || !bookingInfo.date || !bookingInfo.time) {
+      router.push('/booking')
+    }
+  }, [])
+
 
   const onSubmit = async (data: UserData) => {
     setUserInfo(data)
