@@ -1,13 +1,19 @@
 import { atom } from 'jotai';
-import { BookingInfo } from '../types';
+import { BookingInfo, UserData } from '../types';
 
 const bookingInfoAtom = atom<BookingInfo>({
-  location: '',
-  duration: '',
+  location: 'Singapore',
+  duration: '30',
   date: new Date(),
-  time: '10:00pm',
+  time: '',
+})
+
+const userInfoAtom = atom<UserData>({
+  name: '',
+  email: ''
 })
 
 export {
-  bookingInfoAtom
+  bookingInfoAtom,
+  userInfoAtom
 }

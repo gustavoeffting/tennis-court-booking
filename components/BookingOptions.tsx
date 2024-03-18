@@ -16,14 +16,14 @@ const BookingOptions = () => {
         Location
       </p>
       <div className='mt-1'>
-        <Select onValueChange={(value) => setBookingInfo({ ...bookingInfo, location: value })}>
+        <Select defaultValue={bookingInfo.location || 'Singapore'} onValueChange={(value) => setBookingInfo({ ...bookingInfo, location: value })}>
           <SelectTrigger className="lg:w-[300px]">
             <SelectValue placeholder="Location" />
           </SelectTrigger>
-          <SelectContent defaultValue={bookingInfo.location || 'singapore'}>
-            <SelectItem value="singapore">Singapore</SelectItem>
-            <SelectItem value="brazil">Brazil</SelectItem>
-            <SelectItem value="portugal">Portugal</SelectItem>
+          <SelectContent>
+            <SelectItem value="Singapore">Singapore</SelectItem>
+            <SelectItem value="Brazil">Brazil</SelectItem>
+            <SelectItem value="Portugal">Portugal</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -31,11 +31,11 @@ const BookingOptions = () => {
         Duration
       </p>
       <div className='mt-1'>
-        <Select onValueChange={(value) => setBookingInfo({ ...bookingInfo, duration: value })}>
+        <Select defaultValue={bookingInfo.duration || '30'} onValueChange={(value) => setBookingInfo({ ...bookingInfo, duration: value })}>
           <SelectTrigger className="lg:w-[300px]">
             <SelectValue placeholder="Duration" />
           </SelectTrigger>
-          <SelectContent defaultValue={bookingInfo.duration || '30'}>
+          <SelectContent>
             <SelectItem value="30">30 min</SelectItem>
             <SelectItem value="60">1 hour</SelectItem>
           </SelectContent>
