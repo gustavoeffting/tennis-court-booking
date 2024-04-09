@@ -39,7 +39,7 @@ const Confirm = () => {
       <div className='bg-white shadow-lg lg:rounded-lg overflow-hidden w-full'>
         <div className="flex flex-col lg:flex-row">
           <div className="p-5 flex justify-center w-full lg:h-auto border-r border-gray-300">
-            <div>
+            <div className='lg:w-2/3 w-full'>
               <p className="font-bold text-xl">Confirm your order:</p>
               <p className="mt-10">Location: {bookingInfo.location}</p>
               <p className="mt-5">Duration: {bookingInfo.duration}min</p>

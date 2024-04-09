@@ -8,7 +8,7 @@ const FormField: React.FC<FormFieldsProps> = ({
   error,
   valueAsNumber,
 }) => (
-  <>
+  <div className="h-20">
     <input
       className="mt-5 w-full p-2 border border-gray-300 rounded-lg focus:outline-none  focus:ring-2 focus:ring-green-200"
       type={type}
@@ -16,6 +16,6 @@ const FormField: React.FC<FormFieldsProps> = ({
       {...register(name, { valueAsNumber })}
     />
     {error && <p className="text-red-600">{error.message}</p>}
-  </>
+  </div>
 );
 export default FormField;
